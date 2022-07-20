@@ -1,5 +1,5 @@
 import { createTheme, ThemeProvider } from "@mui/material"
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom"
 import HomeBody from "./components/HomePage/HomeBody"
 import SecondHomePage from "./components/HomePage/SecondHomePage"
 import StartHomePage from "./components/HomePage/StartHomePage"
@@ -18,9 +18,8 @@ import { loadCards } from "./store/slices/cardSlice"
 import { NewPaymentPage } from "./pages/NewPaymentPage"
 import { Transactions } from "./pages/Transactions"
 import { MainLayout } from "./pages/MainLayout"
-import StatPage from "./pages/StatPage/StatPage"
 import { ExchangePage } from "./pages/ExchangePage"
-import { StatPageLogic } from "./pages/StatPage/StatPageLogic"
+import { StatPageLogic } from "./pages/StatPage/logic/StatPageLogic"
 
 const theme = createTheme({
 	palette: {
@@ -106,7 +105,11 @@ function App() {
 						<Route
 							path='stats'
 							element={
-								Object.keys(storages).length !== 0 ? <StatPageLogic /> : null
+								Object.keys(storages).length !== 0 ? (
+									<StatPageLogic />
+								) : (
+									<Navigate to='/err' />
+								)
 							}
 						></Route>
 						<Route path='exchange' element={<ExchangePage />}></Route>

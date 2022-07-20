@@ -1,4 +1,4 @@
-import { IPayment, IStorage } from "./types"
+import { IPayment, IStorage } from "../types/types"
 
 export const getData = (paymentsObject: Object, start: number) => {	
 	let timeSum = start

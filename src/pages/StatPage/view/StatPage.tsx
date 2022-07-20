@@ -1,6 +1,7 @@
 import { MenuItem, Select } from "@mui/material"
 import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from "recharts"
-import { ILogicProps } from "./types"
+import { elementSelectStyle, graphsMargins } from "../styles/styles"
+import { ILogicProps } from "../types/types"
 
 const StatPage: React.FC<ILogicProps> = ({
 	curren,
@@ -15,11 +16,7 @@ const StatPage: React.FC<ILogicProps> = ({
 				defaultValue={wallet}
 				value={wallet}
 				fullWidth
-				sx={{
-					marginTop: "50px",
-					textAlign: "center",
-					fontSize: "1.3em",
-				}}
+				sx={elementSelectStyle}
 				onChange={(e) => setWallet(e.target.value)}
 			>
 				{Object.entries(storages).map(([id, storage]) => {
@@ -31,17 +28,7 @@ const StatPage: React.FC<ILogicProps> = ({
 				})}
 			</Select>
 			<ResponsiveContainer width='100%' height='75%'>
-				<AreaChart
-					width={600}
-					height={400}
-					data={data}
-					margin={{
-						top: 50,
-						right: 0,
-						left: 0,
-						bottom: 0,
-					}}
-				>
+				<AreaChart width={600} height={400} data={data} margin={graphsMargins}>
 					<XAxis dataKey='name' />
 					<Tooltip
 						separator=''

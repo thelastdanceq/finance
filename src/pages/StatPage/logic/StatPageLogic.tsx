@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { useAppSelector } from "../../hooks/redux"
-import { getData, getFirstObjectName } from "./helpers"
-import StatPage from "./StatPage"
-import { IStorage } from "./types"
+import { useAppSelector } from "../../../hooks/redux"
+import { getData, getFirstObjectName } from "../helpers/helpers"
+import StatPage from "../view/StatPage"
+import { IStorage } from "../types/types"
 
 const StatPageLogic = () => {
 	const { storages } = useAppSelector((state) => state.card)
