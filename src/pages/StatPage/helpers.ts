@@ -1,8 +1,6 @@
 import { IPayment, IStorage } from "./types"
 
-export const getData = (paymentsObject: Object, start: number) => {
-	// console.log(paymentsObject,start);
-	
+export const getData = (paymentsObject: Object, start: number) => {	
 	let timeSum = start
 	const paymentsArray: IPayment[] = Object.values(paymentsObject)
 	const res = paymentsArray.reduce(

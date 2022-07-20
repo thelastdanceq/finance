@@ -32,12 +32,12 @@ const StatPage: React.FC<ILogicProps> = ({
 			</Select>
 			<ResponsiveContainer width='100%' height='75%'>
 				<AreaChart
-					width={500}
+					width={600}
 					height={400}
 					data={data}
 					margin={{
 						top: 50,
-						right: 50,
+						right: 0,
 						left: 0,
 						bottom: 0,
 					}}
