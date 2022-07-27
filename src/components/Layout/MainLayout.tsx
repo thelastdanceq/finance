@@ -2,10 +2,10 @@ import { Box, Container } from "@mui/material"
 import { getAuth, signOut } from "firebase/auth"
 import React, { useEffect } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
-import { Footer } from "../components/MainPage/Footer"
-import { Header } from "../components/MainPage/Header"
-import { useAppDispatch, useAppSelector } from "../hooks/redux"
-import { loadUser } from "../store/slices/userSlice"
+import { Footer } from "../MainPage/Footer"
+import { Header } from "../MainPage/Header"
+import { useAppDispatch, useAppSelector } from "../../hooks/redux"
+import { loadUser } from "../../store/slices/userSlice"
 
 export function MainLayout() {
 	const auth = getAuth()
