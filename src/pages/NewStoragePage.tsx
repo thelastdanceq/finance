@@ -89,7 +89,7 @@ function NewStorage() {
                         justifyContent: "space-between",
                         alignItems: "center"
                     }}>
-                        <CustomText children='Новое хранилище' />
+                        <CustomText children='New vault' />
                         <Button
                             onClick={onClose}
                             variant='contained'
@@ -102,7 +102,7 @@ function NewStorage() {
                     <TextField
                         fullWidth
 
-                        label="Название"
+                        label="Name"
                         autoFocus
                         sx={{ marginTop: "31px" }}
                         value={name}
@@ -111,7 +111,7 @@ function NewStorage() {
                     <TextField
                         fullWidth
 
-                        label="Описание"
+                        label="Description"
                         sx={{ marginTop: "31px" }}
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
@@ -121,7 +121,7 @@ function NewStorage() {
                     <Box sx={{ width: "100%", display: "flex" }}>
                         <TextField
 
-                            label="Баланс"
+                            label="Start balance"
                             sx={{ marginTop: "31px", flexGrow: 2 }}
                             value={balance}
                             type="number"
@@ -166,7 +166,7 @@ function NewStorage() {
                         sx={{ marginTop: "31px", borderRadius: "15px" }}
                         onClick={onAddData}
                     >
-                        Добавить
+                        Add
                     </Button>
                 </Box>
 

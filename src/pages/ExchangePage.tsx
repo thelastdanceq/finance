@@ -58,7 +58,7 @@ const ExchangePage = () => {
 					<TextField
 						type={"text"}
 						value={search}
-						placeholder='Введите инициалы страны'
+						placeholder='Start typing...'
 						onChange={(e) => {
 							const target = e.target as HTMLInputElement
 							setSearch(target.value)

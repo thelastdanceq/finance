@@ -116,10 +116,7 @@ const MainPage = () => {
 						}}
 						onClick={handleNewStorage}
 					>
-						<CustomText
-							color='primary.light'
-							children={"Добавить новое хранилище"}
-						/>
+						<CustomText color='primary.light' children={"Add new vault"} />
 						<AddCircleOutlineIcon
 							sx={{ color: "primary.light", width: "100px", height: "100px" }}
 						/>
@@ -135,16 +132,16 @@ const MainPage = () => {
 						overflow: "scroll",
 					}}
 				>
-					<CustomText children={"Новый платеж"} color={"primary"} />
+					<CustomText children={"New payment"} color={"primary"} />
 					<NewPaymentBtn
 						disabled={!(Object.entries(storages).length > 0)}
 						onClick={() => handlePayment("-")}
-						children={"Расход"}
+						children={"Expense"}
 					/>
 					<NewPaymentBtn
 						disabled={!(Object.entries(storages).length > 0)}
 						onClick={() => handlePayment("+")}
-						children={"Доход"}
+						children={"Income"}
 					/>
 				</Box>
 			</Container>
@@ -154,16 +151,16 @@ const MainPage = () => {
 				aria-labelledby='draggable-dialog-title'
 			>
 				<DialogTitle style={{ cursor: "move" }} id='draggable-dialog-title'>
-					Точно?
+					Sure?
 				</DialogTitle>
 				<DialogContent>
 					<DialogContentText>
-						<span> Вы уверены в том, что хотите удалить это хранилище ?</span>
+						<span> Are you sure you want to delete this vault?</span>
 					</DialogContentText>
 				</DialogContent>
 				<DialogActions>
 					<Button autoFocus onClick={handleClose}>
-						Отмена
+						Decline
 					</Button>
 					<Button
 						onClick={() => {
@@ -171,7 +168,7 @@ const MainPage = () => {
 							handleClose()
 						}}
 					>
-						Подтверждаю
+						Confirm
 					</Button>
 				</DialogActions>
 			</Dialog>

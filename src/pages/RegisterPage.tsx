@@ -37,7 +37,7 @@ const RegisterPage = () => {
 						}}
 					>
 						<Typography variant='h6' component='div'>
-							Регистрация
+							Registration
 						</Typography>
 						<HelpOutlineIcon />
 					</Toolbar>

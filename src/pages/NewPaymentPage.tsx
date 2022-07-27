@@ -78,7 +78,7 @@ export const NewPaymentPage = () => {
 		const refer = ref(db, "/categories")
 		onValue(refer, (snap) => {
 			setCategories(snap.val())
-			sign === "+" ? setCat("зарплата") : setCat(snap.val()[0])
+			sign === "+" ? setCat("sallary") : setCat(snap.val()[0])
 		})
 	}, [sign])
 	return (
@@ -115,7 +115,7 @@ export const NewPaymentPage = () => {
 						}}
 					>
 						<CustomText
-							children={payments === "-" ? "Новый рассход" : "Новый доход"}
+							children={payments === "-" ? "New expense" : "New income"}
 						/>
 						<Button
 							onClick={onClose}
@@ -138,7 +138,7 @@ export const NewPaymentPage = () => {
 								fullWidth
 							>
 								<InputLabel id='demo-simple-select-standard-label'>
-									Ваши карты
+									Your cards
 								</InputLabel>
 								<Select
 									labelId='demo-simple-select-standard-label'
@@ -169,7 +169,7 @@ export const NewPaymentPage = () => {
 								id='cats'
 								value={cat}
 								variant={"outlined"}
-								defaultValue={categories ? categories[0] : "одежда и обувь"}
+								defaultValue={categories ? categories[0] : "clothes"}
 								onChange={(e) => setCat(e.target.value)}
 								label='Категория'
 								fullWidth
@@ -188,7 +188,7 @@ export const NewPaymentPage = () => {
 						) : (
 							<TextField
 								fullWidth
-								label='Источник'
+								label='Source'
 								value={cat}
 								onChange={(e) => setCat(e.target.value)}
 								sx={{ marginTop: "30px" }}
@@ -204,7 +204,7 @@ export const NewPaymentPage = () => {
 						>
 							<TextField
 								fullWidth
-								label={payments === "-" ? "Цена" : "Заработок"}
+								label={payments === "-" ? "Price" : "Income"}
 								type='number'
 								value={price}
 								onChange={(e) => setPrice(+e.target.value)}
@@ -231,7 +231,7 @@ export const NewPaymentPage = () => {
 						sx={{ marginTop: "20px" }}
 						onClick={handleNewPayment}
 					>
-						отправить
+						Write
 					</Button>
 				</Box>
 			</Container>
